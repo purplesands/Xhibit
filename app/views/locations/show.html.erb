@@ -34,5 +34,15 @@
 <% end %>
 </p>
 
+<p>
+  <strong>Events:</strong><br>
+  <% @location.events.each do |event| %>
+  <%= link_to event.title, event_path(event.id)%> -
+  <%= event.date %> <br>
+  <%= event.description %><br>
+<% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
