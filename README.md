@@ -1,24 +1,58 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+MODELS:
+User
+Park
+Museum
+Reviews
+Events
 
-Things you may want to cover:
+RELATIONSHIPS:
+U m2m P
+U m2m M
+E b2 P, M
+R b2 U, P || M
 
-* Ruby version
+SCHEMA:
+  User
+    username
+    password
+    Name
+    Age
 
-* System dependencies
+  <!-- Park
+    Name
+    Location
+    Size
+    Category
 
-* Configuration
+  Museum
+    Name
+    Location
+    Size
+    Category -->
+  Location
+    Name
+    Location
+    Size
+    LocationType
 
-* Database creation
+  LocationType
+    Category (park, museum etc)
 
-* Database initialization
+  Reviews
+    content
+    rating
+    user_id
+    location_id
 
-* How to run the test suite
+  Event
+    date
+    title
+    description
+    location_id
+    user?
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  EventUser
+    user_id
+    event_id
