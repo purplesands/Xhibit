@@ -10,7 +10,7 @@ LocationType.create(category: "Museum")
 end
 
 5.times do
-  Location.create(name: Faker::University.name, neighborhood: Faker::GameOfThrones.city, size: sizes.sample, location_type_id: Faker::Number.between(1, 2))
+  Location.create(name: Faker::University.name, neighborhood: Faker::GameOfThrones.city, size: sizes.sample, location_type_id: Faker::Number.between(1, 2), cost_of_admission: Faker::Number.between(1, 50))
 end
 
 10.times do
