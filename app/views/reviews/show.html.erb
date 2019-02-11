@@ -12,12 +12,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @review.user %>
+  <%= @review.user.username %>
 </p>
 
 <p>
   <strong>Location:</strong>
-  <%= @review.location %>
+  <%= @review.location.name %>
 </p>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
