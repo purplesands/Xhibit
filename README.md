@@ -20,17 +20,6 @@ SCHEMA:
     Name
     Age
 
-  <!-- Park
-    Name
-    Location
-    Size
-    Category
-
-  Museum
-    Name
-    Location
-    Size
-    Category -->
   Location
     Name
     Location
