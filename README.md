@@ -8,8 +8,7 @@ Reviews
 Events
 
 RELATIONSHIPS:
-U m2m P
-U m2m M
+U m2m L  X
 E b2 P, M
 R b2 U, P || M
 
