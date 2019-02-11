@@ -6,11 +6,6 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
@@ -19,6 +14,39 @@
   <strong>Age:</strong>
   <%= @user.age %>
 </p>
+
+<p>
+  <ul>
+
+  <strong>Reviews:</strong>
+  <% @user.reviews.each do |review| %>
+
+  <h4><%=link_to review.location.name, location_path(review.location) %></h4>
+  <li>Rating: <%= review.rating %></li>
+  <li><%= review.content %></li>
+
+  <% end %>
+</ul>
+
+</p>
+
+<p>
+  <strong>Events:</strong>
+
+  <% @user.events.each do |event| %>
+  <ul>
+
+    <li>Title:<%= event.title %></li>
+    <li>Date:<%=event.date %></li>
+    <li>Location:<%=link_to event.location.name, location_path(event.location) %></li>
+    <li>Desctription: <%= event.description %></li>
+  </ul>
+
+  <% end %>
+
+</p>
+
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

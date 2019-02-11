@@ -17,4 +17,12 @@ end
   Review.create(content: Faker::MichaelScott.quote, rating: Faker::Number.between(1, 5), user_id: Faker::Number.between(1, 5), location_id: Faker::Number.between(1, 5))
 end
 
+5.times do
+  Event.create(date: Faker::Date.forward(50), title: Faker::Lorem.word, description: Faker::Lorem.sentence, location: Location.all.sample)
+end
+
+5.times do
+  EventUser.create(user: User.all.sample, event: Event.all.sample)
+end
+
 puts "end seed"
