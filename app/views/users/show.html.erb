@@ -45,8 +45,11 @@
   <% end %>
 
 </p>
+<%= link_to 'Back', users_path %> |
 
+<% if @user.id == current_user.id %>
+  <%= link_to 'Edit', edit_user_path(@user) %><br><br>
+  <%= link_to 'Log Out', logout_path %><br><br><br><br>
+  <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'are u sure lol' } %>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% end %>
