@@ -24,7 +24,7 @@
   <h4><%=link_to review.location.name, location_path(review.location) %></h4>
   <li>Rating: <%= review.rating %></li>
   <li><%= review.content %></li>
-
+  <%= button_to "Edit Review", edit_review_path(review), :method => :get %>
   <% end %>
 </ul>
 
