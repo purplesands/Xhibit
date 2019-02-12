@@ -5,12 +5,36 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
-    if params[:search]
+  if params[:search]
     @locations = Location.search(params[:search])
   else
     @locations = Location.all
   end
+  if params[:option] == "neighborhood"
+    @locations = Location.all.sort_by {|location| location.neighborhood}
+  elsif params[:option] == "rating"
+    @locations = Location.all.sort_by do |location|
+      if location.overall_rating.to_f.nan?
+        location.overall_rating= "0"
+      else
+      location.overall_rating.to_s
+    end
+      end.reverse
+  else
+    @locations = Location.all
 end
+end
+
+
+# if params[:option] == "DESC"
+#   @dogs = Dog.all.sort_by {|dog| dog.employee_count}
+# elsif params[:option] == "ASC"
+#   @dogs = Dog.all.sort_by {|dog| dog.employee_count}.reverse
+# else
+#   @dogs = Dog.all
+# end
+# end
+
 
 
 

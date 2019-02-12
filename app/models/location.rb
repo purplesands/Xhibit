@@ -3,14 +3,19 @@ class Location < ApplicationRecord
   has_many :reviews
   has_many :users, through: :reviews
   has_many :events
+  attr_writer :overall_rating
 
   def overall_rating
+    if self.reviews == nil
+      return 0
+    else
     ratings = []
     self.reviews.map do |review|
       ratings << review.rating
     end
     ovr = ratings.inject(0, :+).to_f/ratings.count.to_f
     ovr.round(2)
+  end
   end
 
   def self.search(search)
