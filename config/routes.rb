@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :locations, except: [:destroy]
   resources :events, except: [:destroy]
   resources :reviews
-  resources :users
+  resources :users, except: [:new]
+  get '/sign_up', to: "users#new"
+  post '/sign_up', to: "users#create"
   get '/login', to: "sessions#new", as: 'login'
   post '/login', to: "sessions#create"
-  delete '/logout', to: "sessions#destroy"
+  get '/logout', to: "sessions#destroy"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
