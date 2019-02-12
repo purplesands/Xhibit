@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_area :content %>
   </div>
 
   <div class="field">
@@ -22,13 +22,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :user %>
-    <%= form.text_field :user %>
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
+    <%# form.label :location %>
+    <%= form.hidden_field :location_id, value:params[:location_id] %>
   </div>
 
   <div class="actions">

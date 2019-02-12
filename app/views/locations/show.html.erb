@@ -33,6 +33,9 @@
   -<%= link_to review.user.username, user_path(review.user.id) %><br>
 <% end %>
 </p>
+<%= button_to "Leave Review", new_review_path, :method => :get,
+  params: {location_id: @location.id}
+%>
 
 <p>
   <strong>Events:</strong><br>
