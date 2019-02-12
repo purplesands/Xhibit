@@ -38,7 +38,8 @@
   <strong>Events:</strong><br>
   <% @location.events.each do |event| %>
   <%= link_to event.title, event_path(event.id)%> -
-  <%= event.date %> <br>
+  <%= event.start_date %> <br>
+  <%= event.end_date %> <br>
   <%= event.description %><br>
 <% end %>
 </p>

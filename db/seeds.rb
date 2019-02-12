@@ -18,7 +18,7 @@ end
 end
 
 5.times do
-  Event.create(date: Faker::Date.forward(50), title: Faker::Lorem.word, description: Faker::Lorem.sentence, location: Location.all.sample)
+  Event.create(start_date: Faker::Date.forward(1), end_date: Faker::Date.forward(50), title: Faker::Lorem.word, description: Faker::Lorem.sentence, location: Location.all.sample)
 end
 
 5.times do
