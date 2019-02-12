@@ -2,5 +2,9 @@
 
 <%= render 'form', review: @review %>
 
-
 <%= link_to 'Back', user_path(@review.user) %>
+
+
+
+<br><br><br><br><br><br><br><br>
+<%= button_to 'Delete Review', @review, method: :delete, data: { confirm: 'Are you sure?' } %>
