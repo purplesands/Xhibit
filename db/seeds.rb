@@ -77,10 +77,14 @@ end
 
 5.times do
 <<<<<<< HEAD
+<<<<<<< HEAD
   Event.create(start_date: Faker::Date.forward(2), end_date: Faker::Date.forward(50), title: Faker::Lorem.word, description: Faker::Lorem.sentence, location_id: Faker::Number.between(1, 5))
 =======
   Event.create(start_date: Faker::Date.forward(1), end_date: Faker::Date.forward(50), title: Faker::Lorem.word, description: Faker::Lorem.sentence, location: Location.all.sample)
 >>>>>>> event-time
+=======
+  Event.create(date: Faker::Date.forward(50), title: Faker::Lorem.word, description: Faker::Lorem.sentence, location_id: Faker::Number.between(1, 5))
+>>>>>>> event_find_or_create_by
 end
 
 5.times do
