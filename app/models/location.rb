@@ -13,7 +13,4 @@ class Location < ApplicationRecord
     ovr.round(2)
   end
 
-
-
-
 end

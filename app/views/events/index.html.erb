@@ -5,7 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Date</th>
+      <th>Start Date</th>
+      <th>End Date</th>
       <th>Title</th>
       <th>Description</th>
       <th>Location</th>
@@ -16,7 +17,8 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.date %></td>
+        <td><%= event.start_date %></td>
+        <td><%= event.end_date %></td>
         <td><%= event.title %></td>
         <td><%= event.description %></td>
         <td><%= link_to event.location.name, location_path(event.location) %></td>

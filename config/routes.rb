@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :location_types
   resources :locations, except: [:destroy]
   resources :events, except: [:destroy]
-  resources :reviews, except: [:show]
+  resources :reviews
   resources :users
   get '/login', to: "sessions#new", as: 'login'
   post '/login', to: "sessions#create"
