@@ -11,8 +11,10 @@
 </p>
 
 <p>
+  <%if @location.size%>
   <strong>Size:</strong>
   <%= @location.size %>
+  <%end%>
 </p>
 
 <p>
@@ -39,12 +41,15 @@
 
 <p>
   <strong>Events:</strong><br>
+  <ul>
   <% @location.events.each do |event| %>
-  <%= link_to event.title, event_path(event.id)%> -
-  <%= event.start_date %> <br>
-  <%= event.end_date %> <br>
-  <%= event.description %><br>
+  <li><%= link_to event.title, event_path(event.id)%> </li>
+  <li><%= event.format_date(event.start_date) + " - " + event.format_date(event.end_date) %> </li>
+  <li><%= event.days_left%> days left on view </li>
+  <li><%= event.description %></li>
+  <br>
 <% end %>
+</ul>
 </p>
 
 

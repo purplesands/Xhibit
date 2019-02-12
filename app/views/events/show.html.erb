@@ -2,12 +2,18 @@
 
 <p>
   <strong>Begins:</strong>
-  <%= @event.start_date %>
+  <%= @event.format_date(@event.start_date) %>
 </p>
 <p>
   <strong>Ends:</strong>
-  <%= @event.end_date %>
+  <%= @event.format_date(@event.end_date) %>
 </p>
+
+<p>
+  <strong>Days Left:</strong>
+  <%= @event.days_left %> days left on view
+</p>
+
 
 
 <p>

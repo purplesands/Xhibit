@@ -5,7 +5,14 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    if params[:search]
+    @locations = Location.search(params[:search])
+  else
+    @locations = Location.all
   end
+end
+
+
 
   # GET /locations/1
   # GET /locations/1.json
@@ -60,6 +67,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:locationname, :password, :name, :age)
+      params.require(:location).permit(:name, :neighborhood, :size, :cost_of_admission, :image_url, :description, :search)
     end
 end

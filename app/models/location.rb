@@ -13,4 +13,10 @@ class Location < ApplicationRecord
     ovr.round(2)
   end
 
+  def self.search(search)
+    where("name LIKE ? OR neighborhood LIKE ?", "%#{search}%", "%#{search}%")
+
+  end
+
+
 end
