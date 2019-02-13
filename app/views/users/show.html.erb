@@ -20,11 +20,12 @@
 
   <strong>Reviews:</strong>
   <% @user.reviews.each do |review| %>
-
-  <h4><%=link_to review.location.name, location_path(review.location) %></h4>
-  <li>Rating: <%= review.rating %></li>
-  <li><%= review.content %></li>
-  <%= button_to "Edit Review", edit_review_path(review), :method => :get, params: {location_id: review.location.id}%>
+    <h4><%=link_to review.location.name, location_path(review.location) %></h4>
+    <li>Rating: <%= review.rating %></li>
+    <li><%= review.content %></li>
+    <% if @user.id == current_user.id %>
+      <%= button_to "Edit Review", edit_review_path(review), :method => :get, params: {location_id: review.location.id}%>
+    <% end %>
   <% end %>
 </ul>
 
