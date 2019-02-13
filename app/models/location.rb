@@ -11,7 +11,12 @@ class Location < ApplicationRecord
       ratings << review.rating
     end
     ovr = ratings.inject(0, :+).to_f/ratings.count.to_f
-    ovr.round(2)
+    ovr = ovr.to_s
+    if ovr == "NaN"
+      ovr = "Not Rated"
+    else
+      ovr.to_f.round(2).to_s
+    end
   end
 
 
