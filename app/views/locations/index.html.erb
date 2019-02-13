@@ -9,6 +9,17 @@
   <%= submit_tag "Search", :name => nil %>
 <% end %>
 
+<%= form_tag(locations_path, method: "get", id: "menu") do %>
+<select name = "option">
+  <option placeholder = "Sort">  Sort</option>
+  <option value = "rating"> Sort by Rating</option>
+  <option value = "neighborhood"> Sort by Neighborhood</option>
+</select>
+<%= submit_tag 'submit' %>
+<% end %>
+
+
+
 
 <h1>Locations</h1>
 
@@ -33,6 +44,7 @@
         <td><%= location.location_type.category %></td>
       </tr>
     <% end %>
+
   </tbody>
 </table>
 
