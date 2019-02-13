@@ -11,7 +11,7 @@ class EventUsersController < ApplicationController
   end
 
   def destroy
-    EventUser.find_by(params[:id]).destroy
+    EventUser.find(params[:id]).destroy
     redirect_to user_path(session[:user_id])
   end
 
