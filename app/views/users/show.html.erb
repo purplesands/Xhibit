@@ -28,7 +28,6 @@
     <% end %>
   <% end %>
 </ul>
-
 </p>
 
 <p>
@@ -36,35 +35,36 @@
   <% @user.events.each do |event| %>
   <ul>
     <% if DateTime.now < event.end_date %>
-
     <li>Title:<%= link_to event.title, event %></li>
-    <li>Date:<%=event.start_date %></li>
+    <li>Date:<%=event.format_date(event.start_date) + " - " + event.format_date(event.end_date)  %></li>
     <li>Location:<%=link_to event.location.name, location_path(event.location) %></li>
     <li>Desctription: <%= event.description %></li>
+  </ul>
+
   <% if @user.id == current_user.id %>
   <%= button_to 'Delete this Event', event_user_path(event.find_event_user(session[:user_id], event)), method: :delete, params: {event_id: event.id, user_id: session[:user_id]}, data: { confirm: 'Are you sure?' } %>
   <% end %>
   <% end %>
   <% end %>
-  </ul>
+
   </p>
-<p>
+  <p>
   <strong>Past Events:</strong>
   <ul>
+
   <% @user.events.each do |event| %>
-    <% if event.end_date < DateTime.now %>
-    <li>Title:<%= link_to event.title, event %></li>
-    <li>Date:<%=event.start_date %></li>
-    <li>Location:<%=link_to event.location.name, location_path(event.location) %></li>
-    <li>Desctription: <%= event.description %></li>
+  <% if event.end_date < DateTime.now %>
+  <li>Title:<%= link_to event.title, event %></li>
+  <li>Date:<%=event.format_date(event.start_date) + " - " + event.format_date(event.end_date)  %></li>
+  <li>Location:<%=link_to event.location.name, location_path(event.location) %></li>
+  <li>Desctription: <%= event.description %></li>
   <% if @user.id == current_user.id %>
   <%= button_to 'Delete this Event', event_user_path(event.find_event_user(session[:user_id], event)), method: :delete, params: {event_id: event.id, user_id: session[:user_id]}, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-  <% end %>
-  <% end %>
 </ul>
 
-
+  <% end %>
+  <% end %>
+  <% end %>
 
 </p>
 <%= link_to 'Back', users_path %> |
