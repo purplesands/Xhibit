@@ -43,14 +43,31 @@
   <strong>Events:</strong><br>
   <ul>
   <% @location.events.each do |event| %>
+  <%if event.start_date < DateTime.now && DateTime.now < event.end_date%>
   <li><%= link_to event.title, event_path(event.id)%> </li>
   <li><%= event.format_date(event.start_date) + " - " + event.format_date(event.end_date) %> </li>
   <li><%= event.days_left%> days left on view </li>
   <li><%= event.description %></li>
   <br>
 <% end %>
+<% end %>
+
 </ul>
 </p>
+
+<strong>Past Events:</strong><br>
+<ul>
+<% @location.events.each do |event| %>
+<% if event.end_date < DateTime.now %>
+<li><%= link_to event.title, event_path(event.id)%> </li>
+<li><%= event.format_date(event.start_date) + " - " + event.format_date(event.end_date) %> </li>
+<li><%= event.description %></li>
+<% end %>
+<% end %>
+
+</ul>
+</p>
+
 
 
 
