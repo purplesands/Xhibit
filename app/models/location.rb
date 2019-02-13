@@ -22,7 +22,6 @@ class Location < ApplicationRecord
 
   def self.search(search)
     where("name LIKE ? OR neighborhood LIKE ?", "%#{search}%", "%#{search}%")
-
   end
 
 
