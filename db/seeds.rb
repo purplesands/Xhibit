@@ -174,7 +174,7 @@ Location.create(name: "The Battery",
 
 
 10.times do
-  Review.create(content: Faker::MichaelScott.quote, rating: Faker::Number.between(1, 5), user_id: Faker::Number.between(1, 5), location_id: Faker::Number.between(1, 5))
+  Review.create(content: Faker::TvShows::MichaelScott.quote, rating: Faker::Number.between(1, 5), user_id: Faker::Number.between(1, 5), location_id: Faker::Number.between(1, 5))
 end
 
 Event.create(start_date: DateTime.new(2019,1,22), end_date:DateTime.new(2019,4,14), title: "MARIANA CASTILLO DEBALL: FINDING ONESELF OUTSIDE", description: "Working in sculpture, printmaking, photography, and installation, Mariana Castillo Deball (b. 1975, Mexico City, Mexico) examines how knowledge and cultural heritage are produced, organized, measured, and authenticated. Her works often take inspiration from Mesoamerican iconography and narratives, considering their early-colonial transformations and their presence in Central America today. Exploring her philosophical interest in time and space as well as cosmology and depictions of natural order, Castillo Deball has engaged a diverse range of scholars in her research. Her works and installations often reflect Surrealist writer Roger Caillois’s notion of 'diagonal sciences'—unusual cross-sections of the world that reveal what he called 'neglected correlations,' and 'tissues of thought.'", location_id: 1)
