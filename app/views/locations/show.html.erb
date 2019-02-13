@@ -4,6 +4,10 @@
   <strong>Name:</strong>
   <%= @location.name %>
 </p>
+<p>
+  <strong>Description:</strong>
+  <%= @location.description %>
+</p>
 
 <p>
   <strong>Neighborhood:</strong>
@@ -26,6 +30,10 @@
   <strong>Overall Rating:</strong>
   <%= @location.overall_rating %>
 </p>
+
+<p>
+  <img src ="<%=@location.image_url%>"</img>
+  </p>
 
 <p>
   <strong>Reviews:</strong><br>
