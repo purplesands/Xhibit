@@ -19,6 +19,27 @@ class Location < ApplicationRecord
     end
   end
 
+  def self.sort_locations(params)
+    # byebug
+    @locations = Location.all
+    if !!params[:search]
+      @locations = Location.search(params[:search])
+    elsif params[:option] == "neighborhood"
+      @locations = Location.all.sort_by {|location| location.neighborhood}
+    elsif params[:option] == "rating"
+      @locations = Location.all.sort_by do |location|
+        if location.overall_rating == "Not Rated"
+          location.overall_rating= "0"
+        else
+        location.overall_rating
+      end #end of do block
+        end.reverse #end of if block
+    elsif params[:option] == "category"
+        @locations = Location.all.sort_by {|location| location.location_type.category}
+    else
+      @locations = Location.all
+    end
+  end
 
   def self.search(search)
     where("name LIKE ? OR neighborhood LIKE ?", "%#{search}%", "%#{search}%")
