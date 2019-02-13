@@ -7,10 +7,7 @@ class LocationsController < ApplicationController
     @locations = Location.all
   if params[:search]
     @locations = Location.search(params[:search])
-  else
-    @locations = Location.all
-  end
-  if params[:option] == "neighborhood"
+  elsif params[:option] == "neighborhood"
     @locations = Location.all.sort_by {|location| location.neighborhood}
   elsif params[:option] == "rating"
     @locations = Location.all.sort_by do |location|

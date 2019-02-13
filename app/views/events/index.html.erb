@@ -1,35 +1,87 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<h1>Upcoming</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Title</th>
       <th>Start Date</th>
       <th>End Date</th>
-      <th>Title</th>
-      <th>Description</th>
       <th>Location</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
+
     <% @events.each do |event| %>
+    <% if DateTime.now < event.start_date  %>
       <tr>
-        <td><%= event.start_date %></td>
-        <td><%= event.end_date %></td>
-        <td><%= event.title %></td>
-        <td><%= event.description %></td>
+        <td><%= link_to event.title, event %></td>
+        <td><%= event.format_date(event.start_date) %></td>
+        <td><%= event.format_date(event.end_date) %></td>
         <td><%= link_to event.location.name, location_path(event.location) %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end%>
+    <% end%>
+  </tbody>
+</table>
+
+    <h1>Current Exhibitions</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Location</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @events.each do |event| %>
+        <% if event.start_date < DateTime.now && DateTime.now < event.end_date %>
+          <tr>
+            <td><%= link_to event.title, event %></td>
+            <td><%= event.format_date(event.start_date) %></td>
+            <td><%= event.format_date(event.end_date) %></td>
+            <td><%= link_to event.location.name, location_path(event.location) %></td>
+          </tr>
+        <% end %>
+        <% end %>
+
+      </tbody>
+    </table>
+
+
+        <h1>Past</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Location</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+    <% @events.each do |event| %>
+    <% if event.end_date < DateTime.now %>
+      <tr>
+        <td><%= link_to event.title, event %></td>
+        <td><%= event.format_date(event.start_date) %></td>
+        <td><%= event.format_date(event.end_date) %></td>
+        <td><%= link_to event.location.name, location_path(event.location) %></td>
       </tr>
     <% end %>
+    <% end %>
+
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Event', new_event_path %>
