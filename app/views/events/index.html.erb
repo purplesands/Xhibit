@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
+Sort by Location
+<%= form_tag(events_path, method: "get", id: "search-form") do %>
+  <%= collection_select :location, :id, Location.all, :id, :name %>
+  <%= submit_tag "Submit" %>
+<% end %>
+
+
 
 <h1>Current Exhibitions</h1>
 
