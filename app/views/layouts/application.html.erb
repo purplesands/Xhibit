@@ -7,8 +7,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  </head>
+<nav>
+  <div class="row center">
+    <div class="col s2"> Xhibit</div>
+    <% if !!session[:user_id] %>
+    <div class="col s2"> <%= link_to "Profile", user_path(session[:user_id]) %></div>
+    <% end %>
+
+      <div class="col s2"> <%= link_to "Locations", locations_path %></div>
+      <div class="col s2"> <%= link_to "Events", events_path %></div>
+
+    <% if !!session[:user_id] %>
+    <div class="col s2 offset-s2"> <%= link_to "Log Out", logout_path %></div>
+    <% end %>
+    </div>
+</nav>
   <body>
     <%= yield %>
   </body>
