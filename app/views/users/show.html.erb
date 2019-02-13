@@ -33,19 +33,38 @@
 
 <p>
   <strong>Events:</strong>
-
   <% @user.events.each do |event| %>
   <ul>
+    <% if DateTime.now < event.end_date %>
 
-    <li>Title:<%= event.title %></li>
+    <li>Title:<%= link_to event.title, event %></li>
     <li>Date:<%=event.start_date %></li>
     <li>Location:<%=link_to event.location.name, location_path(event.location) %></li>
     <li>Desctription: <%= event.description %></li>
-  </ul>
   <% if @user.id == current_user.id %>
   <%= button_to 'Delete this Event', event_user_path(event.find_event_user(session[:user_id], event)), method: :delete, params: {event_id: event.id, user_id: session[:user_id]}, data: { confirm: 'Are you sure?' } %>
   <% end %>
   <% end %>
+  <% end %>
+  </ul>
+  </p>
+<p>
+  <strong>Past Events:</strong>
+  <ul>
+  <% @user.events.each do |event| %>
+    <% if event.end_date < DateTime.now %>
+    <li>Title:<%= link_to event.title, event %></li>
+    <li>Date:<%=event.start_date %></li>
+    <li>Location:<%=link_to event.location.name, location_path(event.location) %></li>
+    <li>Desctription: <%= event.description %></li>
+  <% if @user.id == current_user.id %>
+  <%= button_to 'Delete this Event', event_user_path(event.find_event_user(session[:user_id], event)), method: :delete, params: {event_id: event.id, user_id: session[:user_id]}, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  <% end %>
+  <% end %>
+</ul>
+
+
 
 </p>
 <%= link_to 'Back', users_path %> |
@@ -54,5 +73,4 @@
   <%= link_to 'Edit', edit_user_path(@user) %><br><br>
   <%= link_to 'Log Out', logout_path %><br><br><br><br>
   <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
-
-<% end %>
+  <% end %>

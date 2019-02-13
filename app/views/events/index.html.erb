@@ -55,8 +55,8 @@
         <td><%= event.format_date(event.end_date) %></td>
         <td><%= link_to event.location.name, location_path(event.location) %></td>
       </tr>
-    <% end%>
-    <% end%>
+    <% end %>
+    <% end %>
   </tbody>
 </table>
 
@@ -71,7 +71,7 @@
         <th>Location</th>
         <th colspan="3"></th>
       </tr>
-      
+
     </thead>
     <tbody>
     <%sorted_events= @events.sort_by {|event|event.start_date}.reverse%>
