@@ -6,7 +6,7 @@ LocationType.create(category: "Park")
 LocationType.create(category: "Museum")
 
 5.times do
-  User.create(username: Faker::Internet.username, name: Faker::Name.name, password: Faker::Internet.password, age: Faker::Number.between(10, 100))
+  User.create(username: Faker::Internet.username, name: Faker::Name.name, password: "test", age: Faker::Number.between(10, 100))
 end
  ##Museums
 Location.create(name: "New Museum",

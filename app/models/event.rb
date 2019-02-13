@@ -11,4 +11,8 @@ class Event < ApplicationRecord
     date.strftime("%A, %B %d, %Y")
   end
 
+  def find_event_user(user_id, event)
+    EventUser.all.find_by(user_id: user_id, event_id: event.id)
+  end
+
 end

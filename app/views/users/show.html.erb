@@ -42,7 +42,7 @@
     <li>Location:<%=link_to event.location.name, location_path(event.location) %></li>
     <li>Desctription: <%= event.description %></li>
   </ul>
-
+  <%= link_to 'Delete this Event', event_user_path(event.find_event_user(session[:user_id], event)), method: :delete, params: {event_id: event.id, user_id: session[:user_id]}, data: { confirm: 'Are you sure?' } %>
   <% end %>
 
 </p>
@@ -51,6 +51,6 @@
 <% if @user.id == current_user.id %>
   <%= link_to 'Edit', edit_user_path(@user) %><br><br>
   <%= link_to 'Log Out', logout_path %><br><br><br><br>
-  <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'are u sure lol' } %>
+  <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% end %>
