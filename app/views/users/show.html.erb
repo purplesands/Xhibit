@@ -23,29 +23,30 @@
     <h4><%=link_to review.location.name, location_path(review.location) %></h4>
     <li>Rating: <%= review.rating %></li>
     <li><%= review.content %></li>
+
     <% if @user.id == current_user.id %>
       <%= button_to "Edit Review", edit_review_path(review), :method => :get, params: {location_id: review.location.id}%>
     <% end %>
   <% end %>
-</ul>
 </p>
 
 <p>
   <strong>Events:</strong>
-  <% @user.events.each do |event| %>
   <ul>
+
+  <% @user.events.each do |event| %>
     <% if DateTime.now < event.end_date %>
     <li>Title:<%= link_to event.title, event %></li>
     <li>Date:<%=event.format_date(event.start_date) + " - " + event.format_date(event.end_date)  %></li>
     <li>Location:<%=link_to event.location.name, location_path(event.location) %></li>
     <li>Desctription: <%= event.description %></li>
-  </ul>
 
   <% if @user.id == current_user.id %>
   <%= button_to 'Delete this Event', event_user_path(event.find_event_user(session[:user_id], event)), method: :delete, params: {event_id: event.id, user_id: session[:user_id]}, data: { confirm: 'Are you sure?' } %>
   <% end %>
   <% end %>
   <% end %>
+</ul>
 
   </p>
   <p>

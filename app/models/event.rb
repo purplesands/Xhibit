@@ -15,4 +15,9 @@ class Event < ApplicationRecord
     EventUser.all.find_by(user_id: user_id, event_id: event.id)
   end
 
+  def self.search(search)
+    where("location_id LIKE ?", "%#{search}%")
+  end
+
+
 end
