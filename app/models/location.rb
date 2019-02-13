@@ -6,9 +6,6 @@ class Location < ApplicationRecord
   attr_writer :overall_rating
 
   def overall_rating
-    if self.reviews == nil
-      return 0
-    else
     ratings = []
     self.reviews.map do |review|
       ratings << review.rating
@@ -16,7 +13,7 @@ class Location < ApplicationRecord
     ovr = ratings.inject(0, :+).to_f/ratings.count.to_f
     ovr.round(2)
   end
-  end
+
 
   def self.search(search)
     where("name LIKE ? OR neighborhood LIKE ?", "%#{search}%", "%#{search}%")

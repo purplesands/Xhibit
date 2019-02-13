@@ -49,6 +49,14 @@ Location.create(name: "Whitney Museum of American Art",
   description: "The Whitney Museum of American Art – known informally as the 'Whitney' – is an art museum located in Manhattan. It was founded in 1930 by Gertrude Vanderbilt Whitney, a wealthy and prominent American socialite and art patron after whom the museum is named. The Whitney focuses on 20th- and 21st-century American art."
 )
 
+Location.create(name: "Brooklyn Museum",
+  neighborhood: "Prospect Heights",
+  location_type_id: 2,
+  cost_of_admission: 16,
+  image_url: "https://media.timeout.com/images/103264554/630/472/image.jpg",
+  description: "The Brooklyn Museum is an art museum located in the New York City borough of Brooklyn. At 560,000 square feet, the museum is New York City's third largest in physical size and holds an art collection with roughly 1.5 million works."
+)
+
 ##Parks
 Location.create(name: "Central Park",
   neighborhood: "Upper West Side",
