@@ -42,7 +42,7 @@ class Location < ApplicationRecord
   end
 
   def self.search(search)
-    where("name LIKE ? OR neighborhood LIKE ?", "%#{search}%", "%#{search}%")
+    where("name LIKE ? OR neighborhood LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 
 
