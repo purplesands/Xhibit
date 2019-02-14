@@ -30,6 +30,7 @@
   $<%= @location.cost_of_admission %>
 </b>
 
+
 <br><br>
 
 <div class = "descript">
@@ -37,7 +38,7 @@
 </div>
 <p>
   <b>Reviews:</b><br>
-  <div class = "reviews">
+  <div class = "reviews" vlink="blue">
   <% @location.reviews.each do |review| %>
   <%= review.content %><br>
   <%= review.rating %> Stars
@@ -50,7 +51,7 @@
 </div>
 </p>
 <br>
-<p>
+<p vlink="blue">
   <b>Events:</b><br>
   <ul>
   <% @location.events.each do |event| %>
@@ -65,7 +66,7 @@
 
 </ul>
 </p>
-
+<p vlink="blue">
 <b>Past Events:</b><br>
 <ul>
 <% @location.events.each do |event| %>

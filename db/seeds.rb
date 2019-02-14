@@ -87,12 +87,12 @@ central_park = Location.create(name: "Central Park",
   size: "843 acres",
   location_type_id: 1,
   cost_of_admission: 0,
-  image_url: "Central Park is an urban park in Manhattan, New York City. It is located between the Upper West Side and Upper East Side, roughly bounded by Fifth Avenue on the east, Central Park West (Eighth Avenue) on the west, Central Park South (59th Street) on the south, and Central Park North (110th Street) on the north. Central Park is the most visited urban park in the United States, with 40 million visitors in 2013, and one of the most filmed locations in the world.",
-  description: "big ol park in manhattan"
+  image_url: "https://cdn.vox-cdn.com/thumbor/di3AKT6YCkpsF41_GvTBLhlvfKU=/0x0:2500x1466/1200x800/filters:focal(1050x533:1450x933)/cdn.vox-cdn.com/uploads/chorus_image/image/61773337/CPT_hero.0.jpg",
+  description: "Central Park is an urban park in Manhattan, New York City. It is located between the Upper West Side and Upper East Side, roughly bounded by Fifth Avenue on the east, Central Park West (Eighth Avenue) on the west, Central Park South (59th Street) on the south, and Central Park North (110th Street) on the north. Central Park is the most visited urban park in the United States, with 40 million visitors in 2013, and one of the most filmed locations in the world."
 )
 
 prospect_park = Location.create(name: "Prospect Park",
-  neighborhood: "a lot",
+  neighborhood: "Park Slope",
   size: "526 acres",
   location_type_id: 1,
   cost_of_admission: 0,
@@ -260,7 +260,7 @@ Whether you're an experienced birder or just looking for a fun winter activity o
 
 Event.create(start_date: DateTime.new(2019,2,17,13), end_date:DateTime.new(2019,2,17,14), title: "City Parks Foundation Presents Yeti, Set, Snow! at the Swedish Cottage Marionette Theatre", description: "City Parks Foundation presents an original production and story, Yeti, Set Snow!, at the Swedish Cottage Marionette Theatre in Central Park, November 13, 2018 - February 24, 2019. Yeti, Set, Snow! tells the story of a young girl named Widget, and her friend, Twig, who encounter a yeti named Pascetti on the first snow day of the winter season. Pascetti, who lives on a mountain top nearby, dislikes the snow. Through songs and snow day activities, Pascetti discovers not only that snow can be fun but also learns the value of friendship.", location: central_park)
 
-Event.create(start_date: DateTime.new(2019,1,17,13), end_date:DateTime.new(2019,1,7,14), title: "Fun hang in the park", description: "Come hang.", location: central_park)
+Event.create(start_date: DateTime.new(2019,1,7,13), end_date:DateTime.new(2019,1,17,14), title: "Fun hang in the park", description: "Come hang.", location: central_park)
 
 Event.create(start_date: DateTime.new(2019,1,25,13), end_date:DateTime.new(2019,1,25,14), title: "Fun hang in the park part 2", description: "Come hang again.", location: central_park)
 
@@ -276,7 +276,7 @@ Event.create(start_date: DateTime.new(2019,2,19,10), end_date:DateTime.new(2019,
 
 Event.create(start_date: DateTime.new(2019,2,10,10), end_date:DateTime.new(2019,2,10,11), title: "Some sesame street characters hanging out here", description: "Come meet the fun and cool cast of hit show Sesame Street.", location: usq)
 
-Event.create(start_date: DateTime.new(2019,2,10,10), end_date:DateTime.new(2019,2,30,11), title: "Ongoing display of popsicle stick sculptures made by seniors", description: "Pretty cool.", location: usq)
+Event.create(start_date: DateTime.new(2019,2,10,10), end_date:DateTime.new(2019,2,28,11), title: "Ongoing display of popsicle stick sculptures made by seniors", description: "Pretty cool.", location: usq)
 
 Event.create(start_date: DateTime.new(2019,4,10,10), end_date:DateTime.new(2019,4,10,11), title: "Bird watching group", description: "Come join us to look at birds.", location: city_hall)
 
