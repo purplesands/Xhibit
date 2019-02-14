@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
-Sort by Location
+<div class="row">
+<div class="col s6">
+<h5>Current Exhibitions</h5>
+</div>
+
+  <div class="col s4 right" width="200" style="width: 200px">
+<div width="200" style="width: 200px">
 <%= form_tag(events_path, method: "get", id: "search-form") do %>
-  <%= collection_select( :location, :id, Location.all, :id, :name, {}, {:class=>'browser-default'}) %>
+  <%= collection_select( :location, :id, Location.all, :id, :name, {prompt: "Search by Location"}, {:class=>'browser-default'}) %>
   <%= submit_tag "Submit" %>
 <% end %>
-
-
-
-<h1>Current Exhibitions</h1>
+</div>
+</div>
 
 <table>
   <thead>
@@ -38,7 +42,7 @@ Sort by Location
 </table>
 
 
-<h1>Upcoming</h1>
+<h5>Upcoming</h5>
 
 <table>
   <thead>
@@ -67,7 +71,7 @@ Sort by Location
   </tbody>
 </table>
 
-<h1>Past</h1>
+<h5>Past</h5>
 
   <table>
     <thead>

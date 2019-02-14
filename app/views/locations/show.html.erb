@@ -1,54 +1,57 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+  <h4>
   <%= @location.name %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @location.description %>
-</p>
+</h4>
+<div class="row right">
+  <div class="col s6" >
+<img src ="<%=@location.image_url%>" height="450" width="550"></img>
+</div>
+</div>
 
-<p>
+<b>
+  <strong>Overall Rating:</strong>
+  <%= @location.overall_rating %>
+</b>
+<b>
   <strong>Neighborhood:</strong>
   <%= @location.neighborhood %>
-</p>
+</b>
 
-<p>
+<b>
   <%if @location.size%>
   <strong>Size:</strong>
   <%= @location.size %>
   <%end%>
-</p>
+</b>
 
-<p>
+<b>
   <strong>Cost of Admission:</strong>
   $<%= @location.cost_of_admission %>
-</p>
+</b>
 
-<p>
-  <strong>Overall Rating:</strong>
-  <%= @location.overall_rating %>
-</p>
+<br><br>
 
+<div class = "descript">
+  <%= @location.description %>
+</div>
 <p>
-  <img src ="<%=@location.image_url%>"</img>
-  </p>
-
-<p>
-  <strong>Reviews:</strong><br>
+  <b>Reviews:</b><br>
+  <div class = "reviews">
   <% @location.reviews.each do |review| %>
   <%= review.content %><br>
   <%= review.rating %> Stars
-  -<%= link_to review.user.username, user_path(review.user.id) %><br>
+  -<%= link_to review.user.username, user_path(review.user.id) %><br><br>
 <% end %>
-</p>
 <%= button_to "Leave Review", new_review_path, :method => :get,
   params: {location_id: @location.id}
 %>
 
+</div>
+</p>
+<br>
 <p>
-  <strong>Events:</strong><br>
+  <b>Events:</b><br>
   <ul>
   <% @location.events.each do |event| %>
   <%if event.start_date < DateTime.now && DateTime.now < event.end_date%>
@@ -63,7 +66,7 @@
 </ul>
 </p>
 
-<strong>Past Events:</strong><br>
+<b>Past Events:</b><br>
 <ul>
 <% @location.events.each do |event| %>
 <% if event.end_date < DateTime.now %>
