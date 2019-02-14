@@ -21,7 +21,7 @@ amnh = Location.create(name: "American Museum of Natural History",
   neighborhood: "Upper West Side",
   location_type_id: 2,
   cost_of_admission: 23,
-  image_url: "http://www.vaejovidae.com/AMNH.jpg",
+  image_url: "https://www.centralpark.com/downloads/8546/download/American%20Museum%20of%20Natural%20History-depositphoto.jpg",
   description: "The American Museum of Natural History, located on the Upper West Side of Manhattan, New York City, is one of the largest museums in the world."
 )
 
@@ -29,7 +29,7 @@ met = Location.create(name: "Metropolitan Museum of Art",
   neighborhood: "Upper East Side",
   location_type_id: 2,
   cost_of_admission: 25,
-  image_url: "https://imgs.6sqft.com/wp-content/uploads/2014/11/21020631/the-met-museum.jpg",
+  image_url: "https://static01.nyt.com/images/2018/03/02/arts/02metfees1/02metfees1-articleLarge.jpg",
   description: "The Metropolitan Museum of Art of New York City, colloquially 'the Met', is the largest art museum in the United States. With 7.06 million visitors to its three locations in 2016, it was the third most visited art museum in the world, and the fifth most visited museum of any kind."
 )
 
@@ -37,8 +37,8 @@ gugg = Location.create(name: "Solomon R. Guggenheim Museum",
   neighborhood: "Upper East Side",
   location_type_id: 2,
   cost_of_admission: 25,
-  image_url: "https://i1.wp.com/www.guggenheim.org/wp-content/uploads/2007/12/gen-press-guggenheim-foundation-image-3.jpg",
-  description: "the gugg"
+  image_url: "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/zrtdtcjqt4avl0yxljb5/SolomonRGuggenheimMuseum.jpg",
+  description: "The Solomon R. Guggenheim Museum, often referred to as The Guggenheim, is an art museum located at 1071 Fifth Avenue on the corner of East 89th Street in the Upper East Side neighborhood of Manhattan, New York City. It is the permanent home of a continuously expanding collection of Impressionist, Post-Impressionist, early Modern and contemporary art and also features special exhibitions throughout the year. The museum was established by the Solomon R. Guggenheim Foundation in 1939 as the Museum of Non-Objective Painting, under the guidance of its first director, the artist Hilla von Rebay. It adopted its current name after the death of its founder, Solomon R. Guggenheim, in 1952."
 )
 
 whitney = Location.create(name: "Whitney Museum of American Art",
@@ -69,7 +69,7 @@ frick = Location.create(name: "The Frick Collection",
   neighborhood: "Upper East Side",
   location_type_id: 2,
   cost_of_admission: 22,
-  image_url: "https://media.timeout.com/images/103264554/630/472/image.jpg",
+  image_url: "https://news.artnet.com/app/news-upload/2017/05/14125865786_f529d0f339_k-1024x682.jpg",
   description: "The Frick Collection is an art museum located in the Henry Clay Frick House on the Upper East Side in Manhattan, New York City at 1 East 70th Street, at the northeast corner with Fifth Avenue. It houses the collection of industrialist Henry Clay Frick."
 )
 
@@ -87,7 +87,7 @@ central_park = Location.create(name: "Central Park",
   size: "843 acres",
   location_type_id: 1,
   cost_of_admission: 0,
-  image_url: "https://cdn.vox-cdn.com/thumbor/1i4TW0_PBv9UOO03Ek1HaQW809I=/0x0:2460x1640/1200x900/filters:focal(1034x624:1426x1016)/cdn.vox-cdn.com/uploads/chorus_image/image/55997615/shutterstock_384332770.0.jpg",
+  image_url: "Central Park is an urban park in Manhattan, New York City. It is located between the Upper West Side and Upper East Side, roughly bounded by Fifth Avenue on the east, Central Park West (Eighth Avenue) on the west, Central Park South (59th Street) on the south, and Central Park North (110th Street) on the north. Central Park is the most visited urban park in the United States, with 40 million visitors in 2013, and one of the most filmed locations in the world.",
   description: "big ol park in manhattan"
 )
 
@@ -96,8 +96,8 @@ prospect_park = Location.create(name: "Prospect Park",
   size: "526 acres",
   location_type_id: 1,
   cost_of_admission: 0,
-  image_url: "https://cdn.vox-cdn.com/thumbor/1i4TW0_PBv9UOO03Ek1HaQW809I=/0x0:2460x1640/1200x900/filters:focal(1034x624:1426x1016)/cdn.vox-cdn.com/uploads/chorus_image/image/55997615/shutterstock_384332770.0.jpg",
-  description: "big ol park in brooklyn"
+  image_url: "https://cdn.vox-cdn.com/thumbor/QKYEz2582c4yM7Oxg7Vj07QLQl0=/0x0:3000x2002/1200x900/filters:focal(1260x761:1740x1241)/cdn.vox-cdn.com/uploads/chorus_image/image/56142315/prospectpark.0.jpg",
+  description: "Prospect Park is a 526-acre (213 ha) public park in the New York City borough of Brooklyn. Prospect Park is run and operated by the Prospect Park Alliance and the New York City Department of Parks and Recreation (NYC Parks). The park is situated between the neighborhoods of Park Slope, Prospect Lefferts Gardens, Flatbush, and Windsor Terrace, and is adjacent to the Brooklyn Museum, Grand Army Plaza, and the Brooklyn Botanic Garden. It is part of the Brooklyn-Queens Greenway, and is the second largest public park in Brooklyn, behind Marine Park."
 )
 
 usq = Location.create(name: "Union Square",
@@ -105,7 +105,7 @@ usq = Location.create(name: "Union Square",
   size: "9 acres",
   location_type_id: 1,
   cost_of_admission: 0,
-  image_url: "https://cdn.vox-cdn.com/thumbor/1i4TW0_PBv9UOO03Ek1HaQW809I=/0x0:2460x1640/1200x900/filters:focal(1034x624:1426x1016)/cdn.vox-cdn.com/uploads/chorus_image/image/55997615/shutterstock_384332770.0.jpg",
+  image_url: "https://www.calibernyc.com/images/areas/6.jpg",
   description: "Opened in 1839 and redesigned in 1872 by Frederick Law Olmsted and Calvert Vaux to accommodate mass congregations of New Yorkers, Union Square Park has served as home base for countless community events and festivals-from the first Labor Day parade in 1882 to workers' rallies in the 1930s to the first Earth Day in 1970 to the current, wildly popular Greenmarket.  This former burial ground has seamlessly transitioned from a town square to a bustling City park, and as such, it is the deserved home of statues depicting distinguished men like George Washington, Abraham Lincoln, Mohandas Gandhi, and Marquis de Lafayette."
 )
 
