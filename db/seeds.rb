@@ -260,8 +260,36 @@ Whether you're an experienced birder or just looking for a fun winter activity o
 
 Event.create(start_date: DateTime.new(2019,2,17,13), end_date:DateTime.new(2019,2,17,14), title: "City Parks Foundation Presents Yeti, Set, Snow! at the Swedish Cottage Marionette Theatre", description: "City Parks Foundation presents an original production and story, Yeti, Set Snow!, at the Swedish Cottage Marionette Theatre in Central Park, November 13, 2018 - February 24, 2019. Yeti, Set, Snow! tells the story of a young girl named Widget, and her friend, Twig, who encounter a yeti named Pascetti on the first snow day of the winter season. Pascetti, who lives on a mountain top nearby, dislikes the snow. Through songs and snow day activities, Pascetti discovers not only that snow can be fun but also learns the value of friendship.", location: central_park)
 
+Event.create(start_date: DateTime.new(2019,1,17,13), end_date:DateTime.new(2019,1,7,14), title: "Fun hang in the park", description: "Come hang.", location: central_park)
 
-15.times do
+Event.create(start_date: DateTime.new(2019,1,25,13), end_date:DateTime.new(2019,1,25,14), title: "Fun hang in the park part 2", description: "Come hang again.", location: central_park)
+
+Event.create(start_date: DateTime.new(2019,4,20,13), end_date:DateTime.new(2019,4,20,8), title: "NYCRUNS Prospect Park 5K & 10K", description: "Join us in Prospect Park for either a 5K or a 10K. We’re excited about running in the warmer, spring weather and even more excited to be in this absolutely breathtaking part of Brooklyn. But the best part? This race benefits CAMBA, a nonprofit that provides services that connect people with opportunities to enhance their quality of life.", location: prospect_park)
+
+Event.create(start_date: DateTime.new(2019,3,17,9), end_date:DateTime.new(2019,3,17,10), title: "Eating Potatoes at Prospect Park", description: "Join us in Prospect Park to eat potatoes. Please BYO.", location: prospect_park)
+
+Event.create(start_date: DateTime.new(2019,3,20,10), end_date:DateTime.new(2019,3,20,19), title: "Boogaloo XVII", description: "Come out for the 17th annual Boogaloo.", location: prospect_park)
+
+Event.create(start_date: DateTime.new(2019,3,20,20), end_date:DateTime.new(2019,3,20,23), title: "Boogaloo XVII Afterparty", description: "Join us for the official afterparty of the 17th annual Boogaloo.", location: prospect_park)
+
+Event.create(start_date: DateTime.new(2019,2,19,10), end_date:DateTime.new(2019,2,19,11), title: "Yoga or something", description: "Doing yoga in Union Square with a lot of people.", location: usq)
+
+Event.create(start_date: DateTime.new(2019,2,10,10), end_date:DateTime.new(2019,2,10,11), title: "Some sesame street characters hanging out here", description: "Come meet the fun and cool cast of hit show Sesame Street.", location: usq)
+
+Event.create(start_date: DateTime.new(2019,2,10,10), end_date:DateTime.new(2019,2,30,11), title: "Ongoing display of popsicle stick sculptures made by seniors", description: "Pretty cool.", location: usq)
+
+Event.create(start_date: DateTime.new(2019,4,10,10), end_date:DateTime.new(2019,4,10,11), title: "Bird watching group", description: "Come join us to look at birds.", location: city_hall)
+
+Event.create(start_date: DateTime.new(2019,1,2,10), end_date:DateTime.new(2019,1,2,11), title: "Planting flowers", description: "Come plant flowers with us.", location: city_hall)
+
+Event.create(start_date: DateTime.new(2019,1,6,10), end_date:DateTime.new(2019,1,6,11), title: "Bowling at Bowling Green", description: "Free bowling in Bowling Green.", location: bowling_green)
+
+Event.create(start_date: DateTime.new(2019,3,6,10), end_date:DateTime.new(2019,3,6,11), title: "9th annual potato eating contest", description: "Come defeat the reigning champ of potato eating.", location: bowling_green)
+
+Event.create(start_date: DateTime.new(2019,3,10,10), end_date:DateTime.new(2019,3,10,11), title: "Free Public Meditation", description: "Free public meditation.", location: bryant_park)
+
+
+30.times do
   EventUser.create(user: User.all.sample, event: Event.all.sample)
 end
 
