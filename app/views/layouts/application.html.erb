@@ -10,27 +10,32 @@
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/app/stylesheets/application.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
   </head>
 <nav>
-  <div class="row center">
-    <div class="col s2"> Xhibit</div>
-    <% if !!session[:user_id] %>
-    <div class="col s2"> <%= link_to "Profile", user_path(session[:user_id]) %></div>
-    <% end %>
-
-      <div class="col s2"> <%= link_to "Locations", locations_path %></div>
-      <div class="col s2"> <%= link_to "Events", events_path %></div>
-
-    <% if !!session[:user_id] %>
-    <div class="col s2 offset-s2"> <%= link_to "Log Out", logout_path %></div>
-    <% end %>
-    </div>
+  <div class="nav-wrapper">
+    <div class="brand-logo blue-text" font-color=""> &nbsp;Xhibit</div>
+    <div class ="row">
+    <ul id="nav-mobile" class="right">
+      <% if !!session[:user_id] %>
+        <li> <%= link_to "Profile", user_path(session[:user_id]) %></li>
+        <% end %>
+        <li> <%= link_to "Locations", locations_path %></li>
+        <li> <%= link_to "Events", events_path %></li>
+      <% if !!session[:user_id] %>
+        <li> <%= link_to "Log Out", logout_path %></li>
+      <% end %>
+    </ul>
+  </div>
 </nav>
+
   <body>
+    <div class = "container2">
     <%= yield %>
+    </div>
   </body>
 </html>

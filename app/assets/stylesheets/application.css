@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+.container2 {
+ margin: 0 auto;
+ max-width: 1280px;
+ width: 90%;
+}
+
+.nav-wrapper {
+    background-color: #b3e5fc !important;
+    font-weight: bold;
+  }
+
+.card-title {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding-bottom: 2em;
+}
+
+.card-content {
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}

@@ -16,9 +16,9 @@
     <%= form.text_area :content %>
   </div>
 
-  <div class="field">
-    <%= form.label :rating %>
-    <%= form.select(:rating, (1..5)) %>
+  <div class="input-field" >
+    <%= form.label :rating %><br><br>
+    <%= form.select(:rating, (1..5), {}, {:class=>'browser-default'}) %>
   </div>
 
   <div class="field">

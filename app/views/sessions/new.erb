@@ -1,17 +1,22 @@
-<h1>Login</h1>
 
-<h4><%= flash[:notice] %></h4>
+
+<h6><%= flash[:notice] %></h6>
 
 <!-- form will POST to '/login' -->
-<%= form_tag(login_path) do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
+<div class="row">
+  <div class="col s6 offset-s4" width="200" style="width: 200px">
+    <h4>Login</h4>
+  <%= form_tag(login_path) do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
 
-  <%= submit_tag 'Login' %>
-<% end %>
+    <%= submit_tag 'Login' %>
+  <% end %>
+  </div><br><br><br>
 
-Don't have a profile?
-<%= button_to "Sign Up Here", new_user_path, :method => :get %>
+  <div class="col s3 offset-s1"><h6>Don't have a profile?</h6>
+  <%= button_to "Sign Up Here", new_user_path, :method => :get %></div>
+</div>

@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 Sort by Location
 <%= form_tag(events_path, method: "get", id: "search-form") do %>
-  <%= collection_select :location, :id, Location.all, :id, :name %>
+  <%= collection_select( :location, :id, Location.all, :id, :name, {}, {:class=>'browser-default'}) %>
   <%= submit_tag "Submit" %>
 <% end %>
 

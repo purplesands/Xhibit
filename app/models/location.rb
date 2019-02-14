@@ -5,6 +5,7 @@ class Location < ApplicationRecord
   has_many :events
   attr_writer :overall_rating
 
+
   def overall_rating
     ratings = []
     self.reviews.map do |review|
@@ -43,6 +44,18 @@ class Location < ApplicationRecord
 
   def self.search(search)
     where("name LIKE ? OR neighborhood LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
+
+  def stars
+    arr = []
+    if self.overall_rating != "Not Rated"
+      self.overall_rating.to_i.times do
+        arr << "⭐️"
+      end
+      arr.join
+    else
+      ""
+    end
   end
 
 
