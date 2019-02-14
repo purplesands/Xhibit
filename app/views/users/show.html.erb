@@ -2,7 +2,7 @@
 
 
   <div class="row">
-    <div class="col s6 left">
+    <div class="col s4 left">
       <h5><%= @user.name %></h5>
 <p>
   <strong>Username:</strong>
@@ -13,10 +13,11 @@
   <strong>Age:</strong>
   <%= @user.age %>
 </p>
+</div>
 
 <p>
   <ul>
-
+<div class="col s4 ">
   <h5>Reviews:</h5>
   <% @user.reviews.each do |review| %>
     <li><%=link_to review.location.name, location_path(review.location) %></li>
@@ -24,13 +25,13 @@
     <li><%= review.content %></li>
 
     <% if @user.id == current_user.id %>
-      <%= button_to "Edit Review", edit_review_path(review), :method => :get, params: {location_id: review.location.id}%>
+      <%= button_to "Edit Review", edit_review_path(review), :method => :get, params: {location_id: review.location.id}%><br>
     <% end %>
   <% end %>
 </p>
 </div>
 
-<div class="col s5 right">
+<div class="col s4 right">
   <h5>Events:</h5>
   <ul>
 <p vlink="blue">
@@ -39,13 +40,14 @@
     <li><h6><%= link_to event.title, event %></h6></li>
     <li><%=link_to event.location.name, location_path(event.location) %></li>
     <li><%=event.format_date(event.start_date) + " - " + event.format_date(event.end_date)  %></li>
-    <li><%= event.description %></li> <br>
-</p>
+    <li><%= event.description.truncate(200, separator: ' ') %></li> <br>
+
   <% if @user.id == current_user.id %>
-  <%= button_to 'Delete this Event', event_user_path(event.find_event_user(session[:user_id], event)), method: :delete, params: {event_id: event.id, user_id: session[:user_id]}, data: { confirm: 'Are you sure?' } %>
+  <%= button_to 'Delete this Event', event_user_path(event.find_event_user(session[:user_id], event)), method: :delete, params: {event_id: event.id, user_id: session[:user_id]}, data: { confirm: 'Are you sure?' } %><br>
   <% end %>
   <% end %>
   <% end %>
+  </p>
 </ul>
 
   </p>
@@ -58,7 +60,7 @@
   <li>Title:<%= link_to event.title, event %></li>
   <li>Date:<%=event.format_date(event.start_date) + " - " + event.format_date(event.end_date)  %></li>
   <li>Location:<%=link_to event.location.name, location_path(event.location) %></li>
-  <li>Desctription: <%= event.description %></li>
+  <li>Description: <%= event.description %></li>
   <% if @user.id == current_user.id %>
   <%= button_to 'Delete this Event', event_user_path(event.find_event_user(session[:user_id], event)), method: :delete, params: {event_id: event.id, user_id: session[:user_id]}, data: { confirm: 'Are you sure?' } %>
 </ul>
