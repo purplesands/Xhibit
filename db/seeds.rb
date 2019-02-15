@@ -5,7 +5,9 @@ sizes = ["small", "medium", "large"]
 LocationType.create(category: "Park")
 LocationType.create(category: "Museum")
 
-10.times do
+User.create(username: "test", name: "Testy McTestface", password: "test", age: Faker::Number.between(10, 100))
+
+15.times do
   User.create(username: Faker::Internet.username, name: Faker::Name.name, password: "test", age: Faker::Number.between(10, 100))
 end
  ##Museums
@@ -320,7 +322,7 @@ Event.create(start_date: DateTime.new(2019,4,5), end_date:DateTime.new(2019,5,5)
 
 
 
-50.times do
+80.times do
   EventUser.create(user: User.all.sample, event: Event.all.sample)
 end
 

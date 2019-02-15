@@ -86,10 +86,10 @@
 
   <% @user.events.each do |event| %>
   <% if event.end_date < DateTime.now %>
-  <li>Title:<%= link_to event.title, event %></li>
-  <li>Date:<%=event.format_date(event.start_date) + " - " + event.format_date(event.end_date)  %></li>
-  <li>Location:<%=link_to event.location.name, location_path(event.location) %></li>
-  <li>Description: <%= event.description %></li>
+  <li><h6><%= link_to event.title, event %></h6></li>
+  <li><%=link_to event.location.name, location_path(event.location) %></li>
+  <li><%=event.format_date(event.start_date) + " - " + event.format_date(event.end_date)  %></li>
+  <li><%= event.description.truncate(200, separator: ' ') %></li> <br>
   <% if @user.id == current_user.id %>
   <%= button_to 'Delete this Event', event_user_path(event.find_event_user(session[:user_id], event)), method: :delete, params: {event_id: event.id, user_id: session[:user_id]}, data: { confirm: 'Are you sure?' } %>
 </ul>
