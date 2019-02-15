@@ -1,0 +1,6 @@
+<h1>all soups</h1>
+<ul>
+<%@soups.each do |soup|  %>
+<li><%=link_to soup.name, soup_path(soup)  %></li>
+<% end %>
+</ul>

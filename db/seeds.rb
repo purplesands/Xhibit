@@ -5,7 +5,7 @@ sizes = ["small", "medium", "large"]
 LocationType.create(category: "Park")
 LocationType.create(category: "Museum")
 
-5.times do
+10.times do
   User.create(username: Faker::Internet.username, name: Faker::Name.name, password: "test", age: Faker::Number.between(10, 100))
 end
  ##Museums
@@ -172,8 +172,8 @@ battery = Location.create(name: "The Battery",
   description: "The Battery is a 25-acre public park located at the southern tip of Manhattan Island in New York City facing New York Harbor. The park and surrounding area is named for the artillery batteries that were positioned there in the city's early years to protect the settlement behind them.."
 )
 
-10.times do
-  Review.create(content: Faker::TvShows::MichaelScott.quote, rating: Faker::Number.between(1, 5), user_id: Faker::Number.between(1, 5), location_id: Faker::Number.between(1, 5))
+50.times do
+  Review.create(content: Faker::Restaurant.review, rating: Faker::Number.between(1, 5), user:User.all.sample, location:Location.all.sample)
 end
 
 Event.create(start_date: DateTime.new(2019,1,22), end_date:DateTime.new(2019,4,14), title: "MARIANA CASTILLO DEBALL: FINDING ONESELF OUTSIDE", description: "Working in sculpture, printmaking, photography, and installation, Mariana Castillo Deball (b. 1975, Mexico City, Mexico) examines how knowledge and cultural heritage are produced, organized, measured, and authenticated. Her works often take inspiration from Mesoamerican iconography and narratives, considering their early-colonial transformations and their presence in Central America today. Exploring her philosophical interest in time and space as well as cosmology and depictions of natural order, Castillo Deball has engaged a diverse range of scholars in her research. Her works and installations often reflect Surrealist writer Roger Caillois’s notion of 'diagonal sciences'—unusual cross-sections of the world that reveal what he called 'neglected correlations,' and 'tissues of thought.'", location: new_museum)
@@ -288,8 +288,39 @@ Event.create(start_date: DateTime.new(2019,3,6,10), end_date:DateTime.new(2019,3
 
 Event.create(start_date: DateTime.new(2019,3,10,10), end_date:DateTime.new(2019,3,10,11), title: "Free Public Meditation", description: "Free public meditation.", location: bryant_park)
 
+Event.create(start_date: DateTime.new(2018,10,10), end_date:DateTime.new(2019,9,22), title: "Masterpieces of French Faience: Selections from the Sidney R. Knafel Collection", description: "The exhibition in the Portico Gallery presents a promised gift to the Frick Collection: seventy-five objects from the collection of Sidney R. Knafel — the finest collection of French faience in private hands — to tell the fascinating and complex history of this particular art form.", location: frick)
 
-30.times do
+Event.create(start_date: DateTime.new(2019,2,21), end_date:DateTime.new(2019,6,2), title: "Moroni: The Riches of Renaissance Portraiture", description: "Moroni: The Riches of Renaissance Portraiture will be the first major exhibition in the United States to focus on the portraiture of Giovanni Battista Moroni (1520/24–1579/80), an essential figure in the northern Italian tradition of naturalistic painting. The Frick will present about twenty of the artist’s most arresting portraits together with a selection of complementary objects — jewelry, textiles, armor, and other luxury items — that evoke the material world of the artist and his sitters and reveal his inventiveness in translating it into paint.", location: frick)
+
+Event.create(start_date: DateTime.new(2019,4,16), end_date:DateTime.new(2019,7,14), title: "Tiepolo in Milan: The Lost Frescoes of Palazzo Archinto", description: "This spring, The Frick Collection will exhibit a selection of paintings, drawings, prints, and photographs related to Giambattista Tiepolo’s first significant project outside of Venice, a series of ceiling frescoes for Palazzo Archinto in Milan that were destroyed during World War II.", location: frick)
+
+Event.create(start_date: DateTime.new(2018,10,31), end_date:DateTime.new(2019,1,20), title: "Luigi Valadier: Splendor in Eighteenth-Century Rome", description: "This spring, The Frick Collection will exhibit a selection of paintings, drawings, prints, and photographs related to Giambattista Tiepolo’s first significant project outside of Venice, a series of ceiling frescoes for Palazzo Archinto in Milan that were destroyed during World War II.", location: frick)
+
+Event.create(start_date: DateTime.new(2019,4,30), end_date:DateTime.new(2019,4,30), title: "Horticulture Workshop", description: "Carrots", location: randalls_island)
+
+Event.create(start_date: DateTime.new(2019,1,29), end_date:DateTime.new(2019,1,29), title: "Laying in the grass", description: "cute time laying in the grass", location: randalls_island)
+
+Event.create(start_date: DateTime.new(2019,5,20), end_date:DateTime.new(2019,5,20), title: "Pet a goat", description: "Goats coming around, come give them a pet on the head", location: randalls_island)
+
+Event.create(start_date: DateTime.new(2019,10,20), end_date:DateTime.new(2019,10,20), title: "Hang out with sheep", description: "Sheep coming around, come give them a pet on the head", location: highland_park)
+
+Event.create(start_date: DateTime.new(2019,9,11), end_date:DateTime.new(2019,9,11), title: "Potato pickin", description: "Pickin potatoes", location: highland_park)
+
+Event.create(start_date: DateTime.new(2018,9,9), end_date:DateTime.new(2018,9,9), title: "Flying kites together", description: "Kites", location: highland_park)
+
+Event.create(start_date: DateTime.new(2019,3,10), end_date:DateTime.new(2019,3,10), title: "Bunch of people eating shake shack", description: "A whole bunch of people eating shake shack", location: madison_sq)
+
+Event.create(start_date: DateTime.new(2019,2,2), end_date:DateTime.new(2019,2,2), title: "Sit quietly and don't talk to anyone", description: "Please for just a moment", location: madison_sq)
+
+Event.create(start_date: DateTime.new(2019,7,2), end_date:DateTime.new(2019,7,2), title: "Wild stuff happening in the Battery", description: "You gotta see it to believe it", location: battery)
+
+Event.create(start_date: DateTime.new(2019,7,10), end_date:DateTime.new(2019,7,10), title: "INSANE stuff happening in the Battery", description: "You gotta see it to believe it", location: battery)
+
+Event.create(start_date: DateTime.new(2019,4,5), end_date:DateTime.new(2019,5,5), title: "Boring stuff happening in the Battery", description: "You gotta see it to believe it", location: battery)
+
+
+
+50.times do
   EventUser.create(user: User.all.sample, event: Event.all.sample)
 end
 
