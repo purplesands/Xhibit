@@ -2,5 +2,4 @@
 <h6><%=Location.find(params[:location_id]).name %></h6>
 
 <%= render 'form', review: @review %>
-
 <%= link_to 'Back', location_path(params[:location_id]) %>

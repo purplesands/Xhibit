@@ -73,7 +73,7 @@
 <% if event.end_date < DateTime.now %>
 <li><%= link_to event.title, event_path(event.id)%> </li>
 <li><%= event.format_date(event.start_date) + " - " + event.format_date(event.end_date) %> </li>
-<li><%= event.description %></li>
+<li><%= event.description %></li><br>
 <% end %>
 <% end %>
 

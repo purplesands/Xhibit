@@ -1,46 +1,30 @@
 # README
 
-MODELS:
-User
-Park
-Museum
-Reviews
-Events
+Make sure to create a good README.md with a short description, install instructions, a contributors guide and a link to the license for your code.
 
-RELATIONSHIPS:
-U m2m L  X
-E b2 P, M
-R b2 U, P || M
+#XHIBIT
 
-SCHEMA:
-  User
-    username
-    password
-    Name
-    Age
+##Joe Mullen & Chris Volpe
 
-  Location
-    Name
-    Location
-    Size
-    LocationType
+XHIBIT is designed to help the user find exhibitions and events at various Museums and Parks around the New York City.
 
-  LocationType
-    Category (park, museum etc)
+User's abilities include:
+Browse locations and see events scheduled at them
+Save events and exhibitions to profile
+Delete events and exhibitions from profile
+Leave reviews for locations
+Update or delete past reviews
+Search locations by neighborhood or keyword
+Search other users by name
+Browse events by current, upcoming, and past
+See how many days left an exhibition is on view
+See who else is attending or has attended events
+Create account with encrypted password
+Update account information
+Delete account
 
-  Reviews
-    content
-    rating
-    user_id
-    location_id
-
-  Event
-    date
-    title
-    description
-    location_id
-    user?
-
-  EventUser
-    user_id
-    event_id
+## To Install
+Install bundled gems
+Run 'rake db:migrate' and 'rake db:seed'
+Run $ rails s to initiate the server.
+Create account and have fun!  : )

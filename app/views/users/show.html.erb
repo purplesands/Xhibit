@@ -1,11 +1,11 @@
-<p id="notice"><%= notice %></p>
+
 
 
   <div class="row">
     <div class="col s4 left">
       <h5><%= @user.name %></h5>
 <p>
-  <strong>Username:</strong>
+  <p1>Username:</p1>
   <%= @user.username %>
 </p>
 
@@ -13,7 +13,36 @@
   <strong>Age:</strong>
   <%= @user.age %>
 </p>
+
+
+<div width="225" style="width: 225px"><%= form_tag(user_path, method: "get", id: "search-form") do %>
+ <%= text_field_tag :search, params[:search], placeholder: "Search for user or username" %>
+  <%= submit_tag "Search", :name => nil %>
+ <% end %></div>
+
+ <% if @users.blank? && params[:search] %>
+   <h6>There are no results for <%= params[:search] %>.</h6>
+   <% elsif params[:search] == nil %>
+    <%= "" %>
+   <% else %>
+   <h6>Results:</h6>
+ <% end %>
+
+<% if !!@users %>
+  <% @users.each do |user| %>
+  <%= link_to user.name, user %>
+  <% end %>
+<% end %>
+
+<br><br><br>
+<%= link_to 'Back', users_path %> |
+
+<% if @user.id == current_user.id %>
+  <%= link_to 'Edit', edit_user_path(@user) %><br><br>
+  <%= link_to 'Log Out', logout_path %>
+  <% end %>
 </div>
+
 
 <p>
   <ul>
@@ -22,7 +51,7 @@
   <% @user.reviews.each do |review| %>
     <li><%=link_to review.location.name, location_path(review.location) %></li>
     <li>Rating: <%= review.rating %></li>
-    <li><%= review.content %></li>
+    <li><%= review.content %></li><br>
 
     <% if @user.id == current_user.id %>
       <%= button_to "Edit Review", edit_review_path(review), :method => :get, params: {location_id: review.location.id}%><br>
@@ -71,10 +100,9 @@
   </div>
   </div>
 
-<%= link_to 'Back', users_path %> |
+
 
 <% if @user.id == current_user.id %>
-  <%= link_to 'Edit', edit_user_path(@user) %><br><br>
-  <%= link_to 'Log Out', logout_path %><br><br><br><br>
+
   <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>

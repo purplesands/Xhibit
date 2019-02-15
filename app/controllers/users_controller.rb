@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if !!params[:search]
+      @users = User.search(params[:search])
+    end
   end
 
   # GET /users/new

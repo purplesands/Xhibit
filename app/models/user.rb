@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_secure_password
   validates :username, uniqueness: true
 
+  def self.search(search)
+    where("name LIKE ? OR username LIKE ?", "%#{search}%", "%#{search}%")
+  end
+
 end

@@ -18,7 +18,7 @@
 
   <div class="input-field" >
     <%= form.label :rating %><br><br>
-    <%= form.select(:rating, (1..5), {}, {:class=>'browser-default'}) %>
+    <%= form.select(:rating, (1..5), {prompt: true}, {:class=>'browser-default'}) %>
   </div>
 
   <div class="field">
@@ -32,6 +32,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit%>
   </div>
 <% end %>
