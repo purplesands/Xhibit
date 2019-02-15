@@ -63,7 +63,7 @@ class UsersController < ApplicationController
     set_user
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to new_user_path	, notice: 'User was successfully deleted.' }
+      format.html { redirect_to logout_path	, notice: 'User was successfully deleted.' }
       format.json { head :no_content }
     end
   end
