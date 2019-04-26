@@ -29,10 +29,13 @@
  <% end %>
 
 <% if !!@users %>
+<ul>
   <% @users.each do |user| %>
-  <%= link_to user.name, user %>
+  <li><%= link_to user.name, user %></li>
   <% end %>
 <% end %>
+</ul>
+
 
 <br><br><br>
 <%= link_to 'Back', users_path %> |
