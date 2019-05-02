@@ -1,6 +1,3 @@
-# README
-
-Make sure to create a good README.md with a short description, install instructions, a contributors guide and a link to the license for your code.
 
 #XHIBIT
 
@@ -28,3 +25,6 @@ Install bundled gems
 Run 'rake db:migrate' and 'rake db:seed'
 Run $ rails s to initiate the server.
 Create account and have fun!  : )
+
+## License
+Xhibit is licensed under the MIT License.
