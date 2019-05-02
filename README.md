@@ -22,9 +22,10 @@ Delete account
 
 ## To Install
 Install bundled gems
-Run 'rake db:migrate' and 'rake db:seed'
-Run $ rails s to initiate the server.
-Create account and have fun!  : )
+Run 
+`$ rake db:migrate && rake db:seed`
+`$ rails s`
+Create an account and have fun!  : )
 
 ## License
 Xhibit is licensed under the MIT License.
