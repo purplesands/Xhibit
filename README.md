@@ -1,7 +1,7 @@
 
-#XHIBIT
+# XHIBIT
 
-##Joe Mullen & Chris Volpe
+## Joe Mullen & Chris Volpe
 
 XHIBIT is designed to help the user find exhibitions and events at various Museums and Parks around the New York City.
 
